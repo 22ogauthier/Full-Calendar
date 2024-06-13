@@ -183,7 +183,7 @@ function Form({ setOpenForm, startDate, endDate, onSubmit, event }) {
                                 </div>
                             </div>
                             <div id="row3">
-                                <input type="date" id="dateS" name="dateS" defaultValue={formatStartDate ? new Date(formatStartDate).toISOString().split('T')[0] : startDate} required/>
+                                <input type="date" id="dateS" name="dateS" defaultValue={formatStartDate ? new Date(formatStartDate).toISOString().split('T')[0] : startDate} required={!allDayChecked}/>
                                 {multipleDates && (
                                     <label for="row3" className="until">until</label>
                                 )}
