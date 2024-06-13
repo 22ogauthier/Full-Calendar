@@ -183,7 +183,7 @@ function Form({ setOpenForm, startDate, endDate, onSubmit, event }) {
                                 </div>
                             </div>
                             <div id="row3">
-                                <input type="date" id="dateS" name="dateS" defaultValue={formatStartDate ? new Date(formatStartDate).toISOString().split('T')[0] : startDate} required={!allDayChecked}/>
+                                <input type="date" id="dateS" name="dateS" defaultValue={formatStartDate ? new Date(formatStartDate).toISOString().split('T')[0] : startDate} required/>
                                 {multipleDates && (
                                     <label for="row3" className="until">until</label>
                                 )}
@@ -192,7 +192,7 @@ function Form({ setOpenForm, startDate, endDate, onSubmit, event }) {
                                 )}
                             </div>
                             <div id="row4">
-                                <input type="time" id="start" name="start" defaultValue={event?.start ? new Date(event.start).toTimeString().split(' ')[0] : ""} required/>
+                                <input type="time" id="start" name="start" defaultValue={event?.start ? new Date(event.start).toTimeString().split(' ')[0] : ""} required={!allDayChecked}/>
                                 <label for="row4"className="until">until</label>
                                 <input type="time" id="end" name="end" defaultValue={event?.end ? new Date(event.end).toTimeString().split(' ')[0] : ""} />
                             </div>
