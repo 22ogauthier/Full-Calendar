@@ -1,0 +1,188 @@
+:root {
+    --vrcDarkBlue: #0039bd;
+    --vrcBlue: #4F7FEE;
+    --vrc-gray: #e3e3e3;
+    --white: #ffffff;
+    --black: #000000;
+}
+
+
+/*Area around modal block and responsible for the positioning of the modal block*/
+#modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+
+/*Modal block*/
+#modal {
+    position: relative;
+    border-radius: 10px;
+    max-width: 600px;
+    background: white;
+}
+
+
+/*Header*/
+#modal-header {
+    position: relative;
+    min-height: fit-content;
+    margin: 0px 0px 10px 0px;
+    border-radius: 10px 10px 0px 0px;
+    background-color: var(--vrcDarkBlue);
+}
+
+
+/*Layout for icons within the header*/
+#changes {
+    padding: 15px;
+    display: grid;
+    grid-template-columns: 30px 10px 30px 1fr 30px;
+    grid-template-rows: 1;
+}
+
+
+/*Header icons*/
+.header-icon {
+    margin: 5px;
+    font-size: 25px;
+    color: var(--white);
+}
+
+
+.header-icon:hover {
+    color: var(--vrcBlue);
+}
+
+
+/*Edit icon*/
+#edit {
+    grid-column: 3;
+}
+
+
+/*Exit/close icon*/
+#close {
+    grid-column: 5;
+}
+
+
+#content {
+    padding-bottom: 20px;
+}
+
+
+#modal-title {
+    display: flex;
+    justify-content: center;
+}
+
+
+/*Event name*/
+h1 {
+    margin-top: 10px;
+    margin-bottom: 0px;
+    font-weight: bold;
+    color: var(--vrcDarkBlue);
+}
+
+
+/*Event info grid area*/
+#event-info {
+    margin: 10px 20px 10px 20px;
+    display: grid;
+    grid-template-rows: 4;
+}
+
+
+/*Each row containing both the icon and text*/
+.info {
+    display: grid;
+    grid-template-columns: 30px 1fr;
+    align-items: center;
+}
+
+
+/*Content decoration icons*/
+.icon {
+    font-size: 25px;
+    padding: 0px;
+    margin-left: 10px;
+}
+
+
+/*Text with event info box*/
+.text {
+    margin-left: 10px;
+    padding: 0px;
+    white-space: normal;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+
+#date {
+    margin: 0px;
+}
+
+
+#date-recurring-text {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+
+/*Text for info*/
+h2,
+h3 {
+    padding: 0px;
+    margin: 10px;
+    color: black;
+}
+
+
+h2 {
+    font-size: 25px;
+}
+
+
+h3 {
+    font-size: 20px;
+}
+
+
+/*Footer*/
+#modal-footer {
+    position: relative;
+    height: 30px;
+    padding: 10px 0px 0px 0px;
+    border-radius: 0px 0px 10px 10px;
+    background-color: var(--vrcDarkBlue);
+}
+
+
+/*Link states*/
+a:link,
+:visited {
+    color: var(--vrcDarkBlue);
+}
+
+
+a:hover,
+:focus {
+    color: var(--vrcBlue);
+}
+
+
+a:active {
+    color: var(--black);
+}
+

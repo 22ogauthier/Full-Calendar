@@ -1,0 +1,246 @@
+:root {
+    --vrcDarkBlue: #0039bd;
+    --vrcBlue: #4F7FEE;
+    --vrcGray: #e3e3e3;
+    --white: #ffffff;
+    --black: #000000;
+}
+
+
+/*Area around modal block and responsible for the positioning of the modal block*/
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+
+/*Modal block*/
+#form-modal {
+    position: relative;
+    border-radius: 10px;
+    width: 425px;
+    background: white;
+}
+
+
+/*Header*/
+#form-header {
+    position: relative;
+    min-height: fit-content;
+    margin: 0p 0px 10px 0px;
+    border-radius: 10px 10px 0px 0px;
+    background-color: var(--vrcDarkBlue);
+}
+
+
+/*Layout for icons within the header*/
+#form-icon {
+    padding: 15px;
+    display: grid;
+    grid-template-columns: 1fr 30px;
+    grid-template-rows: 1;
+}
+
+
+#form-close {
+    grid-column: 2;
+}
+
+
+input, textarea {
+    border-radius: 5px;
+    border: 0;
+    background-color: var(--vrcGray);
+    color: black;
+}
+
+
+textarea::placeholder {
+    color: black;
+    font-size: 20px;
+    font-family:sans-serif;
+}
+
+
+#form-fields {
+    display: grid;
+    grid-template-rows: 9;
+    border: 0;
+    padding: 0px 10px 0px 10px;
+}
+
+
+#form-fields > div {
+    margin-bottom: 10px;
+}
+
+
+#recurring-extension > div {
+    margin-bottom: 10px;
+}
+
+
+#row1 {
+    display: flex;
+    justify-content: center;
+}
+
+
+#title {
+    min-width: 380px;
+    max-width: 380px;
+    min-height: 30px;
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+
+#row2 {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+
+.row2-label {
+    font-size: 20px;
+}
+
+
+.row2-input {
+    transform: scale(1.5);
+}
+
+
+#row3 {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+
+#dateS, #dateE {
+    width: 150px;
+    height: 30px;
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+
+.until {
+    padding-top: 10px;
+    font-size: 20px;
+}
+
+
+#row4 {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+
+#start, #end {
+    width: 150px;
+    height: 30px;
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+
+#row5, #row6 {
+    margin-left: 10px;
+}
+
+
+#location {
+    min-width: 380px;
+    max-width: 380px;
+    height: 30px;
+    margin-top: 10px;
+    font-size: 15px;
+}
+
+
+#notes {
+    min-width: 380px;
+    max-width: 380px;
+    height: 100px;
+    margin-top: 10px;
+    font-size: 15px;
+}
+
+
+#row7 {
+    margin-left: 10px;
+}
+
+
+#recurring-label {
+    font-size: 20px;
+}
+
+
+#recurring {
+    transform: scale(1.5);
+}
+
+
+#row8 {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+
+#row9 {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+
+#startRec, #endRec {
+    width: 150px;
+    height: 30px;
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+
+#submit {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+
+#submit-button {
+    width: 150px;
+    height: 50px;
+    border-radius: 5px;
+    border: 0;
+    font-size: 20px;
+    background-color: var(--vrcDarkBlue);
+    color: white;
+}
+
+
+/*Footer*/
+#form-footer {
+    position: relative;
+    height: 30px;
+    margin: 0p 0px 10px 0px;
+    border-radius: 0px 0px 10px 10px;
+    /* box-shadow: 0px 2px 5px #000000; */
+    background-color: var(--vrcDarkBlue);
+}
+
