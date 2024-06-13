@@ -170,7 +170,7 @@ function Form({ setOpenForm, startDate, endDate, onSubmit, event }) {
                     <form onSubmit={onSubmit}>
                         <fieldset id="form-fields">
                             <div id="row1">
-                                <textarea type="text" id="title" name="title" multiline="true" defaultValue={event?.title} placeholder="Event Name..." />
+                                <textarea type="text" id="title" name="title" multiline="true" defaultValue={event?.title} placeholder="Event Name..." required/>
                             </div>
                             <div id="row2">
                                 <div id="all-day-div">
@@ -183,7 +183,7 @@ function Form({ setOpenForm, startDate, endDate, onSubmit, event }) {
                                 </div>
                             </div>
                             <div id="row3">
-                                <input type="date" id="dateS" name="dateS" defaultValue={formatStartDate ? new Date(formatStartDate).toISOString().split('T')[0] : startDate} />
+                                <input type="date" id="dateS" name="dateS" defaultValue={formatStartDate ? new Date(formatStartDate).toISOString().split('T')[0] : startDate} required/>
                                 {multipleDates && (
                                     <label for="row3" className="until">until</label>
                                 )}
@@ -192,7 +192,7 @@ function Form({ setOpenForm, startDate, endDate, onSubmit, event }) {
                                 )}
                             </div>
                             <div id="row4">
-                                <input type="time" id="start" name="start" defaultValue={event?.start ? new Date(event.start).toTimeString().split(' ')[0] : ""} />
+                                <input type="time" id="start" name="start" defaultValue={event?.start ? new Date(event.start).toTimeString().split(' ')[0] : ""} required/>
                                 <label for="row4"className="until">until</label>
                                 <input type="time" id="end" name="end" defaultValue={event?.end ? new Date(event.end).toTimeString().split(' ')[0] : ""} />
                             </div>
