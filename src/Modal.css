@@ -133,12 +133,18 @@ h1 {
     margin: 0px;
 }
 
-
-#date-recurring-text {
-    grid-column: 2;
-    grid-row: 2;
+#formatDate {
+    margin-bottom: 0px;
 }
 
+#formatTime {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+#formatRecurDate {
+    margin-top: 0px;
+}
 
 /*Text for info*/
 h2,

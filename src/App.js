@@ -114,24 +114,10 @@ export default function App() {
         recurDays: "",
         formatRecurStart: "",
         formatRecurEnd: "",
-        multipleDays: ""
+        multipleDays: "",
+        multiEnd: ""
       }
     };
-
-
-    if (myFormData.get('allday') == 'on') {
-      newEvent.allDay = true;
-    } else {
-      newEvent.allDay = false;
-    }
-
-
-    if (myFormData.get('multiple') == 'on') {
-      newEvent.extendedProps.multipleDays = true;
-    } else {
-      newEvent.extendedProps.multipleDays = false;
-    }
-
 
     //creates a groupID for recurrsing events
     if (myFormData.get('recurring') == "on") {
@@ -190,9 +176,22 @@ export default function App() {
     if (myFormData.get('dateE')) {
       const eventEnd = new Date(myFormData.get('dateE'));
       eventEnd.setDate(eventEnd.getDate() + 1);
-      newEvent.end = eventEnd;
+      newEvent.end = formatDate(eventEnd);
     }
 
+    if (myFormData.get('multiple') == 'on') {
+      newEvent.extendedProps.multipleDays = true;
+
+      const eventEnd = new Date(myFormData.get('dateE'));
+      eventEnd.setDate(eventEnd.getDate() + 2);
+      newEvent.end = formatDate(eventEnd);
+
+      const multiEnd = new Date(myFormData.get('dateE'));
+      multiEnd.setDate(multiEnd.getDate() + 2);
+      newEvent.extendedProps.multiEnd = formatDate(multiEnd);
+    } else {
+      newEvent.extendedProps.multipleDays = false;
+    }
 
     //if an end time is provided on the form, set the event's end time to that time and allday becomes false, otherwise, allday stays true and the end time is 11:59 PM
     if (myFormData.get('end') != "") {
@@ -205,11 +204,11 @@ export default function App() {
       newEvent.start += ("T" + myFormData.get('start'));
     }
 
-
-    // if (newEvent.allday == 'on') {
-    //   newEvent.end += "T11:59:00";
-    // }
-
+    if (myFormData.get('allday') == 'on') {
+      newEvent.allDay = true;
+    } else {
+      newEvent.allDay = false;
+    }
 
     console.log(newEvent) //prints out event details for testing
     addEvent(newEvent); //calls addEvent function

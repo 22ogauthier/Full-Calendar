@@ -38,18 +38,22 @@ function Modal({ setOpenModal, event, removeEvent, setOpenForm }) {
     };
 
 
-    const multipleDays = event?.end.toLocaleDateString() != event?.start.toLocaleDateString() && !event?.allDay ? true : false;
+    // const multipleDays = event?.end.toLocaleDateString() != event?.start.toLocaleDateString() && !event?.allDay ? true : false;
 
 
     function formatDate() {
         let date = "";
         date += event?.start?.toLocaleDateString('en-US', dateOptions);
-        if (multipleDays) {
-            date += " until " + event?.end.toLocaleDateString('en-US', dateOptions) + "\n";
-        } else {
-            if (!event?.allDay) {
-                date += " ~ " + event?.start?.toLocaleTimeString('en-US', timeOptions) + " - " + (event?.end?.toLocaleTimeString() ? event?.end?.toLocaleTimeString('en-US', timeOptions) : "11:59 PM");
-            }
+        if (event?.extendedProps.multipleDays && event?.extendedProps.multiEnd != "") {
+            date += " until " + new Date(event?.extendedProps.multiEnd).toLocaleDateString('en-US', dateOptions) + "\n";
+        }
+        return date;
+    }
+
+    function formatTime() {
+        let date = "";
+        if (!event?.allDay) {
+            date += " ~ " + event?.start?.toLocaleTimeString('en-US', timeOptions) + " - " + (event?.end?.toLocaleTimeString() ? event?.end?.toLocaleTimeString('en-US', timeOptions) : "11:59 PM");
         }
         return date;
     }
@@ -111,10 +115,9 @@ function Modal({ setOpenModal, event, removeEvent, setOpenForm }) {
                                 <BsCalendarEventFill />
                             </div>
                             <div id="date-text" class="text">
-                                <h2>{formatDate()}</h2>
-                            </div>
-                            <div id="date-recurring-text" class="text">
-                                <h3>{formatRecurDate()}</h3>
+                                <h2 id="formatDate">{formatDate()}</h2>
+                                <h2 id="formatTime">{formatTime()}</h2>
+                                <h3 id="formatRecurDate">{formatRecurDate()}</h3>
                             </div>
                         </div>
                         {hasLocation && (
