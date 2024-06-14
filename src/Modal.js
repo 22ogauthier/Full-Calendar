@@ -53,7 +53,7 @@ function Modal({ setOpenModal, event, removeEvent, setOpenForm }) {
     function formatTime() {
         let date = "";
         if (!event?.allDay) {
-            date += " ~ " + event?.start?.toLocaleTimeString('en-US', timeOptions) + " - " + (event?.end?.toLocaleTimeString() ? event?.end?.toLocaleTimeString('en-US', timeOptions) : "11:59 PM");
+            date += event?.start?.toLocaleTimeString('en-US', timeOptions) + " - " + (event?.end?.toLocaleTimeString() ? event?.end?.toLocaleTimeString('en-US', timeOptions) : "11:59 PM");
         }
         return date;
     }
